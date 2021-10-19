@@ -9,10 +9,20 @@ from random import randint
 from time import sleep
 # }
 
-def scrapping(page,genre):
+
+# Attributes to Scrap
+years = []
+duration = []
+votes = []
+genre = []
+ratings = []
+names = []
+certificate = []
+
+def scrapping(page,genr):
 
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36'}
-    url = f'https://www.imdb.com/search/title/?genres={genre}&start={page}&explore=title_type,genres&ref_=adv_nxt'
+    url = f'https://www.imdb.com/search/title/?genres={genr}&start={page}&explore=title_type,genres&ref_=adv_nxt'
     r = requests.get(url, headers=headers)
 
     htmlContent=r.content
@@ -22,14 +32,6 @@ def scrapping(page,genre):
 
     movies=bs.find_all ("div", class_="lister-item mode-advanced")
 
-    # Attributes to Scrap
-    years=[]
-    duration=[]
-    votes=[]
-    genre=[]
-    ratings=[]
-    names=[]
-    certificate=[]
     for items in movies:
         # For titles of the movie/show
         name = items.find('img', {'class':'loadlate'})['alt']
@@ -75,7 +77,7 @@ def scrapping(page,genre):
             'Ratings': ratings, 'Votes': votes}
     df = pd.DataFrame(Data)
     df.to_csv('MoviesData.csv', index=True, header=True)
-
+    print("Page scrapped")
 
 # Driver Code
 i=1
