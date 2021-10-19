@@ -75,14 +75,13 @@ def scrapping(page,genre):
             'Ratings': ratings, 'Votes': votes}
     df = pd.DataFrame(Data)
     df.to_csv('MoviesData.csv', index=True, header=True)
-    print ("Page Scrapped, Heading towards Next page")
 
 
 # Driver Code
 i=1
 while i<=100000:
     scrapping(i,"sci-fi")
-    i=+50
+    i = i + 50
 
 time = randint(2, 10)
 sleep(time)
@@ -90,43 +89,43 @@ sleep(time)
 i=1
 while i<=100000:
     scrapping(i,"comedy")
-    i=+50
+    i=i+50
 time = randint(2, 10)
 sleep(time)
 i=1
 while i<=100000:
     scrapping(i,"action")
-    i=+50
+    i=i+50
 time = randint(2, 10)
 sleep(time)
 i=1
 while i<=100000:
     scrapping(i,"romance")
-    i=+50
+    i=i+50
 time = randint(2, 10)
 sleep(time)
 i=1
 while i<=100000:
     scrapping(i,"drama")
-    i=+50
+    i=i+50
 time = randint(2, 10)
 sleep(time)
 i=1
 while i<=100000:
     scrapping(i,"thriller")
-    i=+50
+    i=i+50
 time = randint(2, 10)
 sleep(time)
 i=1
 while i<=100000:
     scrapping(i,"romance")
-    i=+50
+    i=i+50
 time = randint(2, 10)
 sleep(time)
 i=1
 while i<=100000:
     scrapping(i,"mystery")
-    i=+50
+    i=i+50
 time = randint(2, 10)
 sleep(time)
 i=1
