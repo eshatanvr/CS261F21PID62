@@ -76,7 +76,7 @@ while count<=24000:
     Data = {'Title': names, 'Year': years, 'Duration': duration, 'Genre': genre, 'Certificate': certificate,
             'Ratings': ratings, 'Votes': votes}
     df = pd.DataFrame(Data)
-    df.to_csv('MoviesData.csv', index=True, header=True)
+    df.to_csv('MoviesData.csv', index=False)
     print("Page no.",count+1," scrapped")
     count+=1
     url="https://www.imdb.com"+nextbtn
