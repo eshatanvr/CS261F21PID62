@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
         self.label.setPixmap(QtGui.QPixmap("Screenshot 2021-10-23 072704.png"))
         self.label.setObjectName("label")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
-        self.tableWidget.setGeometry(QtCore.QRect(490, 20, 891, 811))
+        self.tableWidget.setGeometry(QtCore.QRect(510, 20, 891, 811))
         font = QtGui.QFont()
         font.setFamily("Nirmala UI")
         font.setPointSize(10)
@@ -167,7 +167,7 @@ class Ui_MainWindow(object):
         self.label_13.setPixmap(QtGui.QPixmap("icons8-filter-48.png"))
         self.label_13.setObjectName("label_13")
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(70, 500, 311, 31))
+        self.lineEdit.setGeometry(QtCore.QRect(70, 500, 251, 31))
         self.lineEdit.setObjectName("lineEdit")
         self.comboBox_3 = QtWidgets.QComboBox(self.centralwidget)
         self.comboBox_3.setGeometry(QtCore.QRect(190, 550, 191, 31))
@@ -179,6 +179,9 @@ class Ui_MainWindow(object):
         self.comboBox_3.addItem("")
         self.comboBox_3.addItem("")
         self.comboBox_3.addItem("")
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(330, 500, 51, 28))
+        self.pushButton.setObjectName("pushButton")
         self.label.raise_()
         self.tableWidget.raise_()
         self.label_4.raise_()
@@ -197,6 +200,7 @@ class Ui_MainWindow(object):
         self.label_13.raise_()
         self.lineEdit.raise_()
         self.comboBox_3.raise_()
+        self.pushButton.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1425, 26))
@@ -237,6 +241,7 @@ class Ui_MainWindow(object):
         self.comboBox_3.setItemText(1, _translate("MainWindow", "Votings"))
         self.comboBox_3.setItemText(2, _translate("MainWindow", "Duration"))
         self.comboBox_3.setItemText(3, _translate("MainWindow", "Ratings"))
+        self.pushButton.setText(_translate("MainWindow", "Search"))
 
 
 if __name__ == "__main__":
