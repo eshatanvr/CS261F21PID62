@@ -23,6 +23,7 @@ class QLabel_alterada(QLabel):
     def mousePressEvent(self, ev):
         self.clicked.emit()
 
+
 class Ui_MainWindow(object):
     years = []
     duration = []
