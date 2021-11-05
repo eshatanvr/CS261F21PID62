@@ -9,7 +9,7 @@
 import csv
 import os
 import sys
-
+import Scrap1 as scrap
 import pandas as pd
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem
@@ -24,7 +24,9 @@ class QLabel_alterada(QLabel):
         self.clicked.emit()
 
 
+
 class Ui_MainWindow(object):
+    
     years = []
     duration = []
     votes = []
@@ -42,11 +44,13 @@ class Ui_MainWindow(object):
             certificate.append(lines[4])
             ratings.append(lines[5])
             votes.append(lines[6])
-
-        
+    
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1425, 904)
+        self.textEdit = QtWidgets.QTextEdit(MainWindow)
+        self.textEdit.setGeometry(QtCore.QRect(123, 100, 161, 21))
+        self.textEdit.setObjectName("textEdit")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -123,7 +127,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.progressBar.setFont(font)
-        self.progressBar.setProperty("value", 78)
+        self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName("progressBar")
         self.label_5 = QtWidgets.QLabel(self.centralwidget)
         self.label_5.setGeometry(QtCore.QRect(70, 400, 421, 41))
@@ -256,10 +260,6 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-
-
-
-
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Cine-Scrape"))
@@ -293,7 +293,8 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "Search"))
         self.pushButton_2.setText(_translate("MainWindow", "Load Data"))
         self.pushButton_2.clicked.connect(self.Open_file) 
-
+        self.label_8.clicked.connect(lambda:scrap.scrapStart())
+        
     #From csv to table
     def Open_file(self):
 
@@ -324,6 +325,7 @@ class Ui_MainWindow(object):
                 j = j - 1 
             array1[j + 1] = key 
         return array1 
+
 
 if __name__ == "__main__":
     import sys
