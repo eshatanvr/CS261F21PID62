@@ -217,6 +217,13 @@ class Ui_MainWindow(object):
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(330, 500, 51, 28))
         self.pushButton.setObjectName("pushButton")
+        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.setGeometry(QtCore.QRect(200, 600, 121, 31))
+        self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.pushButton_2.setFont(font)
+        self.pushButton_2.setObjectName("pushButton_2")
         self.label.raise_()
         self.tableWidget.raise_()
         self.label_4.raise_()
@@ -236,6 +243,7 @@ class Ui_MainWindow(object):
         self.lineEdit.raise_()
         self.comboBox_3.raise_()
         self.pushButton.raise_()
+        self.pushButton_2.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1425, 26))
@@ -283,8 +291,8 @@ class Ui_MainWindow(object):
         self.comboBox_3.setItemText(2, _translate("MainWindow", "Duration"))
         self.comboBox_3.setItemText(3, _translate("MainWindow", "Ratings"))
         self.pushButton.setText(_translate("MainWindow", "Search"))
-        
-        self.label_8.clicked.connect(self.Open_file) 
+        self.pushButton_2.setText(_translate("MainWindow", "Load Data"))
+        self.pushButton_2.clicked.connect(self.Open_file) 
 
     #From csv to table
     def Open_file(self):
